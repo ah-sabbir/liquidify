@@ -1,113 +1,78 @@
-# liquidify - One handed shopify business solutions
+# Universal Shopify Theme
 
+This is a flexible Shopify theme that's meant to be reused and customized. Reusable components exist within sections, snippets, and templates for assurance that all features are available across the entire theme.
 
-# Project Overview
-**Objective**: Develop a Shopify theme or app that enhances user experience by offering advanced customization, streamlined inventory management, SEO optimization tools, performance improvements, customer support enhancements, shipping solutions, multi-currency support, marketing tools, abandoned cart recovery, integration options, data analytics, and mobile optimization.
+## Features
 
-## Key Features and Solutions
+- **Responsive Design**: The theme is responsive and adapts itself to various screen sizes.
+- **Dynamic Product Grid**: Highlights the products on the homepage dynamically.
+- **Reusable Snippets**: Pockets of code, such as the price of the product, have been reused in numerous templates.
+- **Easy Navigation**: Automatically generated navigation menus based on Shopify's link lists.
+- **Customizable Sections**: This can easily be done using the Shopify theme editor.
 
-### A. Advanced Customization
-- **Drag-and-Drop Builder**: Implement a user-friendly drag-and-drop interface that allows users to customize their store layouts without coding.
-- **Custom CSS/JS Editor**: Provide an option for advanced users to add custom CSS and JavaScript.
-- **Template Library**: Offer a library of customizable templates for various niches, allowing users to start with a solid foundation.
+## Folder Structure
 
-### B. Inventory Management
-- **Unified Inventory Dashboard**: Develop a central dashboard that aggregates inventory data from all sales channels (Shopify, Amazon, eBay).
-- **Low Stock Alerts**: Send notifications when inventory levels fall below a defined threshold.
-- **Bulk Edit Tools**: Allow users to edit product listings in bulk for efficiency.
+```bash
+my-universal-theme/  
+├── assets/  
+│   └── theme.css               # Main stylesheet for the theme  
+├── config/  
+│   ├── settings_schema.json     # Schema for theme setting  
+│   └── settings_data.json       # Default configuration for the theme  
+├── layout/  
+│   └── theme.liquid             # The main layout file for the theme  
+├── sections/  
+│   ├── header.liquid            # Header section  
+│   ├── footer.liquid            # Footer section  
+│   └── product-grid.liquid      # Product grid section on homepage  
+└── snippets/  
+    ├── product-price.liquid     # Snippet to show product price  
+    └── navigation.liquid        # Dynamic navigation menu snippet  
+├── templates/  
+│   ├── index.liquid             # Homepage template  
+│   ├── product.liquid           # Product detail page template  
+│   ├── collection.liquid        # Collection page template  
+│   └── page.liquid              # Template of a custom page  
+└── config/  
+    └── settings_data.json       # Data of settings used for theme customizing  
+```
 
-### C. SEO Optimization Tools
-- **SEO Audit Tool**: Incorporate an automated SEO audit tool that checks for issues and suggests improvements.
-- **Meta Tags and Descriptions**: Enable users to easily edit meta tags, descriptions, and alt text for images.
-- **XML Sitemap Generation**: Automatically generate and update XML sitemaps to improve search engine indexing.
+# Installation
 
-### D. Speed and Performance
-- **Image Optimization**: Implement automatic image compression and optimization to reduce load times.
-- **Lazy Loading**: Use lazy loading for images and videos to improve page speed.
-- **Performance Monitoring Dashboard**: Provide a dashboard that tracks site speed and performance metrics.
+Install the theme in your Shopify store with the following steps:
 
-### E. Enhanced Customer Support
-- **Integrated Chat Support**: Add a chatbot feature for immediate customer assistance and a ticketing system for more complex inquiries.
-- **Knowledge Base**: Create a searchable knowledge base with articles and video tutorials to help users solve common problems.
+1. **Clone or download** this repository to your computer.
+2. **Compress the Folder**: Make sure all theme files and folders are compressed inside one single `.zip` file (e.g., `my-universal-theme.zip`).
+3. **Upload the theme to Shopify**:
+   - Log in to your Shopify admin.
+   - Go to **Online Store > Themes**.
+   - Click **Upload Theme**, then select the `.zip` file you just created.
+4. **Publish Theme**: Upon uploading, you can preview the theme and publish it as your live theme.
 
-### F. Shipping and Fulfillment Solutions
-- **Dynamic Shipping Rates**: Integrate real-time shipping rate calculators from major carriers (UPS, FedEx, etc.).
-- **Fulfillment Center Integration**: Offer integrations with popular fulfillment centers for streamlined order processing.
-- **Shipping Label Printing**: Allow users to print shipping labels directly from their dashboard.
+# Customization
 
-### G. Multi-Currency Support
-- **Automatic Currency Conversion**: Automatically convert prices based on the customer’s location, using up-to-date exchange rates.
-- **Localized Pricing**: Allow users to set localized prices for different regions.
+- **Edit Theme Settings**: You can adjust several settings from the Shopify theme editor (e.g., title for the product grid). These settings are defined in `config/settings_schema.json` and stored in `config/settings_data.json`.
+- **Adjust Styles**: The CSS for the theme resides in `assets/theme.css`. You can override the store's styling by editing this file.
+- **Add/Edit Sections**: Sections such as header, footer, and product-grid can be updated from the `sections/` folder. You can create additional sections by following the same structure.
+- **Navigate**: The main navigation is dynamically pulled using the `snippets/navigation.liquid` file, which gets data from your Shopify link lists. To edit the navigation, go to **Online Store > Navigation** in your Shopify admin and click **Edit** by the Main Menu.
 
-### H. Marketing and Advertising Tools
-- **Email Marketing Automation**: Integrate email marketing tools that allow users to create campaigns, segment audiences, and automate follow-ups.
-- **Social Media Integration**: Provide easy sharing options for products on social media platforms.
-- **Promotional Pop-ups**: Create customizable pop-up tools for promotions and newsletter sign-ups.
+# Available Templates
 
-### I. Abandoned Cart Recovery
-- **Automated Recovery Emails**: Implement automated email campaigns to remind customers of their abandoned carts.
-- **Discount Incentives**: Allow users to set up discount codes to entice customers back to complete their purchases.
+- **index.liquid**: Homepage template containing a dynamic product grid.
+- **product.liquid**: Product detail page template.
+- **collection.liquid**: Collection page template.
+- **page.liquid**: Template for custom pages such as "About Us" or "Contact Us."
 
-### J. Integration Challenges
-- **API Connections**: Develop API connectors for popular tools like QuickBooks, Mailchimp, and other CRMs.
-- **App Marketplace**: Create a marketplace for additional plugins that enhance functionality.
+# Adding New Sections and Snippets
 
-### K. Data Analytics
-- **Dashboard for Insights**: Provide an intuitive dashboard that shows key metrics (sales, traffic, conversion rates) in real-time.
-- **Custom Reports**: Allow users to generate custom reports based on their preferences.
+- **Sections**: To create a new section, add a `.liquid` file inside the `sections/` folder and reference it in your template or the theme editor.
+- **Snippets**: Provide reusable components by creating `.liquid` files in the `snippets/` directory. Reference snippets using `{% render 'snippet-name' %}` from your templates.
 
-### L. Mobile Optimization
-- **Responsive Design**: Ensure the theme is fully responsive and optimized for all mobile devices.
-- **Mobile-First Features**: Implement features specifically designed for mobile users, such as one-click checkout.
+# How to Use Product Grid
 
-## Technology Stack
+Add the Product Grid section from the theme editor to the homepage. You can change the section title and adjust the number of products displayed by editing `sections/product-grid.liquid`.
 
-### Frontend Development
-- **Liquid**: Shopify's templating language for theme development.
-- **HTML/CSS/JavaScript**: Core technologies for layout and functionality.
-- **React**: For building dynamic components and single-page applications.
+# Support
 
-### Backend Development
-- **Node.js**: For server-side logic and API development.
-- **Express.js**: To create RESTful APIs for external service integration.
-- **Shopify Admin API**: To manage store data and functionality.
-
-### Database (if needed for custom apps)
-- **MongoDB or Firebase**: For storing additional user data, settings, or custom app data.
-
-### Hosting
-- **Vercel or Netlify**: For hosting custom frontend applications or serverless functions.
-
-### Analytics and SEO Tools
-- **Google Analytics**: For tracking and analyzing user behavior.
-- **SEMrush or Moz**: For ongoing SEO analysis.
-
-## Development Plan
-
-### A. Research and Planning
-- Conduct market research to gather insights on user needs and pain points.
-- Develop user personas and scenarios to guide feature development.
-
-### B. Prototyping
-- Create wireframes and mockups for the theme/app interface.
-- Conduct user testing sessions to validate design and functionality.
-
-### C. Development
-- Build the frontend using Shopify Liquid and JavaScript frameworks.
-- Develop backend functionalities with Node.js and Express.js.
-- Integrate necessary APIs and services.
-
-### D. Testing
-- Perform rigorous testing (unit, integration, and user acceptance testing) to ensure quality and functionality.
-- Optimize the theme for speed and performance.
-
-### E. Launch and Marketing
-- Deploy the theme/app to the Shopify marketplace.
-- Utilize social media, content marketing, and targeted advertising to promote the solution.
-
-### F. Post-Launch Support
-- Provide ongoing support and maintenance based on user feedback and performance analytics.
-- Regularly update the theme/app with new features and improvements.
-
-## Conclusion
-By following this comprehensive plan, you can create a Shopify theme or app that effectively addresses the various challenges faced by users on the platform. This solution not only enhances the user experience but also empowers Shopify merchants to optimize their stores for success.
+If you have any problems or need assistance, you can contact the theme developer [Sabbir Ahmmed](mailto:<imsabbir.dev@outlook.com>?subject=<some issues in liquidify theme>&body=<body>
+) or refer to the [Shopify Theme Development Documentation](https://shopify.dev/themes).

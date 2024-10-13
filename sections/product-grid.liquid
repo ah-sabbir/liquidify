@@ -1,0 +1,28 @@
+<section>
+  <h2>{{ section.settings.title }}</h2>
+  <div class="product-grid">
+    {% for product in collections.all.products limit: 8 %}
+      <div class="product-item">
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+          <h3>{{ product.title }}</h3>
+          {% render 'product-price', product: product %}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Featured Products"
+    }
+  ]
+}
+{% endschema %}

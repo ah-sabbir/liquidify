@@ -1,0 +1,14 @@
+[
+    {
+      "name": "Product Grid Section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Section Title",
+          "default": "Featured Products"
+        }
+      ]
+    }
+  ]
+  

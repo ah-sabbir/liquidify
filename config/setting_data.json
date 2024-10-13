@@ -1,0 +1,13 @@
+{
+    "current": {
+      "sections": {
+        "product-grid": {
+          "type": "product-grid",
+          "settings": {
+            "title": "Our Featured Products"
+          }
+        }
+      }
+    }
+  }
+  
