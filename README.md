@@ -1,4 +1,4 @@
-# Universal Shopify Theme
+# liquidify - One handed shopify business solutions
 
 This is a flexible Shopify theme that's meant to be reused and customized. Reusable components exist within sections, snippets, and templates for assurance that all features are available across the entire theme.
 
@@ -74,5 +74,4 @@ Add the Product Grid section from the theme editor to the homepage. You can chan
 
 # Support
 
-If you have any problems or need assistance, you can contact the theme developer [Sabbir Ahmmed](mailto:<imsabbir.dev@outlook.com>?subject=<some issues in liquidify theme>&body=<body>
-) or refer to the [Shopify Theme Development Documentation](https://shopify.dev/themes).
+If you have any problems or need assistance, you can contact the theme developer [Sabbir Ahmmed](mailto:<imsabbir.dev@outlook.com>?subject=<subject>&body=<body>) or refer to the [Shopify Theme Development Documentation](https://shopify.dev/themes).
