@@ -13,7 +13,7 @@ This is a flexible Shopify theme that's meant to be reused and customized. Reusa
 ## Folder Structure
 
 ```bash
-my-universal-theme/  
+liquidify/  
 ├── assets/  
 │   └── theme.css               # Main stylesheet for the theme  
 ├── config/  
